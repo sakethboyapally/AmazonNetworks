@@ -1,2 +1,2 @@
 # StanfordLargeNetwork
-Project on Analyzing Flight Routes using Graph Algorithms in C++
+Project on Analyzing Amazon Customer data using Graph Algorithms in C++
