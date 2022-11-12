@@ -18,4 +18,7 @@ public:
     vector<string> splitFile(string file);
     vector<string> splitLine(string line);
 
+private:
+    string filename_;
+
 };
