@@ -1,19 +1,19 @@
 #pragma once
 
-#include "parse.hpp"
 #include <vector>
 #include <string>
 using namespace std;
 
 class Graph {
 public:
-    Graph(string file);
+    Graph(string filename);
     int DFS();
-    int BFS();
+    
     int Djistrka();
+    int Kosarajus();
 
 private:
-    vector<pair<int,int>> adjacent;
+    vector<pair<int,vector<int>>> adjacent;
     
 
 };
