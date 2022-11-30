@@ -26,7 +26,8 @@ TEST_CASE("Parse Test Split Line 2") {
 }
 
 TEST_CASE("Parse Test Large File") {
-    string file = 'test_file.txt';
+    string& file = 'test_file.txt';
+    Graph g = new Graph(file);
 
 
 }
