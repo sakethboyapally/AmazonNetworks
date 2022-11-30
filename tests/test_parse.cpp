@@ -2,17 +2,16 @@
 
 #include "../includes/graph.hpp"
 // #include "../tests/test_file.txt"
+#include "../includes/utils.hpp"
 
 using namespace std;
 
 TEST_CASE("Parse Test Split Line") {
-    Graph g("test_file.txt");
-    
-    string line = "19   5";
+   string line = "2769                     18   ";
     pair<int, int> user = splitLine(line);
     pair<int, int> ans;
-    ans.first = 19;
-    ans.second = 5;
+    ans.first = 2769;
+    ans.second = 18;
 
     REQUIRE(user == ans);
 }
@@ -26,9 +25,3 @@ TEST_CASE("Parse Test Split Line 2") {
 
     REQUIRE(user == ans);
 }
-
-// TEST_CASE("Parse Test Large File") {
-//     string file = 'test_file.txt';
-
-
-// }
