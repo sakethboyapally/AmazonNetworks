@@ -9,6 +9,13 @@ using namespace std;
 
 class Graph {
 public:
+    struct Node {
+        int ID;
+        int ASIN;
+        string group;
+        int salesrank;
+        vector<int> similar;
+    }
 
     Graph(string filename);
     int DFS();
@@ -27,6 +34,6 @@ public:
 private:
 
     vector<vector<int>> adjacent;
-    
+
 
 };
