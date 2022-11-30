@@ -5,19 +5,14 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <algorithm>
+
 using namespace std;
 
 class Graph {
 public:
-    struct Node {
-        int ID;
-        int ASIN;
-        string group;
-        int salesrank;
-        vector<int> similar;
-    }
 
-    Graph(string filename);
+    Graph(string& filename);
     int DFS();
     int Kosarajus();
     
@@ -32,7 +27,7 @@ public:
 
 
 private:
-
+    size_t size;
     vector<vector<int>> adjacent;
 
 

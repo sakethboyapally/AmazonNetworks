@@ -28,7 +28,7 @@ void Graph::addEdge(int node, int edge) {
 
 
 
-Graph::Graph(string filename) {
+Graph::Graph(string& filename) {
     ifstream input(filename);
     string line = "";
     while (getline(input, line)) {
@@ -36,8 +36,9 @@ Graph::Graph(string filename) {
         
         pair<int,int> pair = splitLine(line);
         addEdge(pair.first, pair.second);
-        
     }
+
+    this->size = adjacent.size();
 }
 
 pair<int, int> Graph::splitLine(string& line) {
@@ -55,5 +56,7 @@ pair<int, int> Graph::splitLine(string& line) {
         }
     }
 }
+
+
     
 
