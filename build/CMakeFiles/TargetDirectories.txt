@@ -1,0 +1,12 @@
+/workspaces/AmazonNetworks/build/CMakeFiles/test.dir
+/workspaces/AmazonNetworks/build/CMakeFiles/main.dir
+/workspaces/AmazonNetworks/build/CMakeFiles/edit_cache.dir
+/workspaces/AmazonNetworks/build/CMakeFiles/rebuild_cache.dir
+/workspaces/AmazonNetworks/build/lib/CMakeFiles/lodepng.dir
+/workspaces/AmazonNetworks/build/lib/CMakeFiles/binarytree.dir
+/workspaces/AmazonNetworks/build/lib/CMakeFiles/cs225.dir
+/workspaces/AmazonNetworks/build/lib/CMakeFiles/edit_cache.dir
+/workspaces/AmazonNetworks/build/lib/CMakeFiles/rebuild_cache.dir
+/workspaces/AmazonNetworks/build/src/CMakeFiles/src.dir
+/workspaces/AmazonNetworks/build/src/CMakeFiles/edit_cache.dir
+/workspaces/AmazonNetworks/build/src/CMakeFiles/rebuild_cache.dir
