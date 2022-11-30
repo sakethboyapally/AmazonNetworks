@@ -23,10 +23,6 @@ public:
     int Djistrka();
 
     void addEdge(int node, int edge);
-    pair<int, int> splitLine(string& line);
-
-    string trimLeft(const string &str);
-    string trimRight(const string &str);
 
 
 private:

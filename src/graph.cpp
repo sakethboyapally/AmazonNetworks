@@ -1,4 +1,5 @@
 #include "../includes/graph.hpp"
+#include "../includes/utils.hpp"
 
 void Graph::addEdge(int node, int edge) {
     if (node < 0) return;
@@ -41,29 +42,6 @@ Graph::Graph(string& filename) {
     this->size = adjacent.size();
     vector<bool> temp(size, false);
     this->visited = temp;
-}
-
-pair<int, int> Graph::splitLine(string& line) {
-    string trim = trimLeft(trimRight(line));
-    pair<int, int> ans;
-
-    size_t index = trim.find_first_of(" ");
-    ans.first = stoi(trim.substr(0, index));
-    trim.erase(0, index);
-
-    string second = trimLeft(trim);
-    ans.second = stoi(second);
-    return ans;
-}
-
-string trimLeft(const string &str) {
-    string tmp = str;
-    return tmp.erase(0, tmp.find_first_not_of(" "));
-}
-
-string trimRight(const string &str) {
-    string tmp = str;
-    return tmp.erase(tmp.find_last_not_of(" ") + 1);
 }
 
 
