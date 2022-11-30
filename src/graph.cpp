@@ -69,7 +69,7 @@ void Graph::fillOrder(int node ) {
 }
 
 
-vector<vector<int>> Graph::getAdjacent() {
+vector<vector<int>>& Graph::getAdjacent() {
     return adjacent;
 }
 

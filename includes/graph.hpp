@@ -27,7 +27,7 @@ public:
 
     string trimLeft(const string &str);
     string trimRight(const string &str);
-    vector<vector<int>> getAdjacent();
+    vector<vector<int>>& getAdjacent();
 
 private:
     size_t size;
