@@ -39,6 +39,8 @@ Graph::Graph(string& filename) {
     }
 
     this->size = adjacent.size();
+    vector<bool> temp(size, false);
+    this->visited = temp;
 }
 
 pair<int, int> Graph::splitLine(string& line) {
