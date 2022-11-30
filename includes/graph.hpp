@@ -6,6 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
