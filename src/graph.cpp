@@ -44,19 +44,26 @@ Graph::Graph(string& filename) {
 }
 
 pair<int, int> Graph::splitLine(string& line) {
+    string trim = trimLeft(trimRight(line));
     pair<int, int> ans;
-    string s;
-    char delimiter = ' ';
-    istringstream stream(line);
-    bool first = false;
-    while (getline(stream, s, delimiter)) {
-        if (!first) {
-            ans.first = stoi(s);
-            first = true;
-        } else {
-            ans.second = stoi(s);
-        }
-    }
+
+    size_t index = trim.find_first_of(" ");
+    ans.first = stoi(trim.substr(0, index));
+    trim.erase(0, index);
+
+    string second = trimLeft(trim);
+    ans.second = stoi(second);
+    return ans;
+}
+
+string trimLeft(const string &str) {
+    string tmp = str;
+    return tmp.erase(0, tmp.find_first_not_of(" "));
+}
+
+string trimRight(const string &str) {
+    string tmp = str;
+    return tmp.erase(tmp.find_last_not_of(" ") + 1);
 }
 
 
@@ -83,3 +90,5 @@ void Graph::fillOrder(int node ) {
     // All vertices reachable from v are processed by now, push v
     Stack.push(v);
 }
+
+
