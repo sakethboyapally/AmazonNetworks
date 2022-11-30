@@ -13,7 +13,10 @@ class Graph {
 public:
 
     Graph(string& filename);
-    int DFS();
+    
+    int DFS(int node);
+    void fillOrder(int node);
+
     int Kosarajus();
     
     int Djistrka();
@@ -29,6 +32,7 @@ public:
 private:
     size_t size;
     vector<vector<int>> adjacent;
-
+    vector<bool> visited (size, false);
+    stack<int> Stack;
 
 };
