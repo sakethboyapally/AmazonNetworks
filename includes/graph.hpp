@@ -6,6 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <algorithm>
+#include <stack>
 
 using namespace std;
 
@@ -13,8 +14,8 @@ class Graph {
 public:
 
     Graph(string& filename);
-    
-    int DFS(int node);
+
+    void DFS(int node);
     void fillOrder(int node);
 
     int Kosarajus();

@@ -58,7 +58,7 @@ pair<int, int> Graph::splitLine(string& line) {
 }
 
 
-int Graph::DFS(int node) {
+void Graph::DFS(int node) {
    visited[node] = true;
    // cout << node << " ";
  
