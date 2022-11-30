@@ -1,12 +1,14 @@
-#include <catch2/catch_test_macros.hpp>
+#include "catch2/catch_test_macros.hpp"
 
 #include "../includes/graph.hpp"
-#include "../tests/test_file.txt"
+// #include "../tests/test_file.txt"
 
 using namespace std;
 
 TEST_CASE("Parse Test Split Line") {
-    string line = "19   5"
+    Graph g("test_file.txt");
+    
+    string line = "19   5";
     pair<int, int> user = splitLine(line);
     pair<int, int> ans;
     ans.first = 19;
@@ -16,7 +18,7 @@ TEST_CASE("Parse Test Split Line") {
 }
 
 TEST_CASE("Parse Test Split Line 2") {
-    string line = "  2769   20   "
+    string line = "  2769   20   ";
     pair<int, int> user = splitLine(line);
     pair<int, int> ans;
     ans.first = 2769;
@@ -25,9 +27,8 @@ TEST_CASE("Parse Test Split Line 2") {
     REQUIRE(user == ans);
 }
 
-TEST_CASE("Parse Test Large File") {
-    string& file = 'test_file.txt';
-    Graph g = new Graph(file);
+// TEST_CASE("Parse Test Large File") {
+//     string file = 'test_file.txt';
 
 
-}
+// }

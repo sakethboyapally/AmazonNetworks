@@ -12,13 +12,13 @@ void Graph::addEdge(int node, int edge) {
     //     }
     // }
 
-    if (node < adjacent.size()) {
+    if ((size_t) node < adjacent.size()) {
         adjacent[node].push_back(edge);
-    } else if (node == adjacent.size()) {
+    } else if ((size_t) node == adjacent.size()) {
         vector<int> vec(1, edge);
         adjacent.push_back(vec);
     } else {
-        while (adjacent.size() != node) {
+        while (adjacent.size() != (size_t) node) {
             adjacent.push_back(vector<int>());
         }
         vector<int> vec(1, edge);
