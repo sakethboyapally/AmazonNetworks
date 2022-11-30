@@ -48,8 +48,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/AmazonNetworks/sr
 set(OLD_GLOB
   "/workspaces/AmazonNetworks/src/graph.cpp"
   "/workspaces/AmazonNetworks/src/main.cpp"
-  "/workspaces/AmazonNetworks/src/parse.cpp"
-  "/workspaces/AmazonNetworks/src/traversal.cpp"
+  "/workspaces/AmazonNetworks/src/utils.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

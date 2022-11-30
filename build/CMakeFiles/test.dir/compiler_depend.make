@@ -291,7 +291,8 @@ CMakeFiles/test.dir/tests/test_parse.cpp.o: ../tests/test_parse.cpp \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
-  /usr/include/c++/11/bits/stl_stack.h
+  /usr/include/c++/11/bits/stl_stack.h \
+  ../includes/utils.hpp
 
 
 /usr/include/c++/11/debug/deque:
@@ -573,6 +574,8 @@ CMakeFiles/test.dir/tests/test_parse.cpp.o: ../tests/test_parse.cpp \
 /usr/include/c++/11/bits/codecvt.h:
 
 /usr/include/catch2/internal/catch_test_macro_impl.hpp:
+
+../includes/utils.hpp:
 
 /usr/include/c++/11/exception:
 

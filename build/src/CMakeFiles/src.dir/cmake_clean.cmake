@@ -3,10 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/graph.cpp.o.d"
   "CMakeFiles/src.dir/main.cpp.o"
   "CMakeFiles/src.dir/main.cpp.o.d"
-  "CMakeFiles/src.dir/parse.cpp.o"
-  "CMakeFiles/src.dir/parse.cpp.o.d"
-  "CMakeFiles/src.dir/traversal.cpp.o"
-  "CMakeFiles/src.dir/traversal.cpp.o.d"
+  "CMakeFiles/src.dir/utils.cpp.o"
+  "CMakeFiles/src.dir/utils.cpp.o.d"
   "libsrc.a"
   "libsrc.pdb"
 )

@@ -179,53 +179,29 @@ main.cpp.s:
 	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-parse.o: parse.cpp.o
-.PHONY : parse.o
+utils.o: utils.cpp.o
+.PHONY : utils.o
 
 # target to build an object file
-parse.cpp.o:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/parse.cpp.o
-.PHONY : parse.cpp.o
+utils.cpp.o:
+	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.o
+.PHONY : utils.cpp.o
 
-parse.i: parse.cpp.i
-.PHONY : parse.i
-
-# target to preprocess a source file
-parse.cpp.i:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/parse.cpp.i
-.PHONY : parse.cpp.i
-
-parse.s: parse.cpp.s
-.PHONY : parse.s
-
-# target to generate assembly for a file
-parse.cpp.s:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/parse.cpp.s
-.PHONY : parse.cpp.s
-
-traversal.o: traversal.cpp.o
-.PHONY : traversal.o
-
-# target to build an object file
-traversal.cpp.o:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/traversal.cpp.o
-.PHONY : traversal.cpp.o
-
-traversal.i: traversal.cpp.i
-.PHONY : traversal.i
+utils.i: utils.cpp.i
+.PHONY : utils.i
 
 # target to preprocess a source file
-traversal.cpp.i:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/traversal.cpp.i
-.PHONY : traversal.cpp.i
+utils.cpp.i:
+	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.i
+.PHONY : utils.cpp.i
 
-traversal.s: traversal.cpp.s
-.PHONY : traversal.s
+utils.s: utils.cpp.s
+.PHONY : utils.s
 
 # target to generate assembly for a file
-traversal.cpp.s:
-	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/traversal.cpp.s
-.PHONY : traversal.cpp.s
+utils.cpp.s:
+	cd /workspaces/AmazonNetworks/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/utils.cpp.s
+.PHONY : utils.cpp.s
 
 # Help Target
 help:
@@ -242,12 +218,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... parse.o"
-	@echo "... parse.i"
-	@echo "... parse.s"
-	@echo "... traversal.o"
-	@echo "... traversal.i"
-	@echo "... traversal.s"
+	@echo "... utils.o"
+	@echo "... utils.i"
+	@echo "... utils.s"
 .PHONY : help
 
 
