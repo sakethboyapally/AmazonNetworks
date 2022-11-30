@@ -14,8 +14,8 @@ class Graph {
 public:
 
     Graph(string& filename);
-    
-    int DFS(int node);
+
+    void DFS(int node);
     void fillOrder(int node);
 
     int Kosarajus();
@@ -26,14 +26,10 @@ public:
     pair<int, int> splitLine(string& line);
 
 
-    void addEdge(int node, int edge);
-    pair<int, int> splitLine(string& line);
-
-
 private:
     size_t size;
     vector<vector<int>> adjacent;
-    vector<bool> visited (size, false);
+    vector<bool> visited;
     stack<int> Stack;
 
 };

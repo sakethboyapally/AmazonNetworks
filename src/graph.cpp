@@ -39,6 +39,8 @@ Graph::Graph(string& filename) {
     }
 
     this->size = adjacent.size();
+    vector<bool> temp(size, false);
+    this->visited = temp;
 }
 
 pair<int, int> Graph::splitLine(string& line) {
@@ -58,13 +60,13 @@ pair<int, int> Graph::splitLine(string& line) {
 }
 
 
-int Graph::DFS(int node) {
+void Graph::DFS(int node) {
    visited[node] = true;
    // cout << node << " ";
  
-    list<int>::iterator i;
-    for (i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
-        if (!visited[*i]) DFSUtil(*i);
+    
+    for (vector<int>::iterator i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
+        if (!visited[*i]) DFS(*i);
     }
 }
 
@@ -73,11 +75,10 @@ void Graph::fillOrder(int node ) {
     // cout << node << " ";
 
     // Recur for all the vertices adjacent to this vertex
-    list<int>::iterator i;
-    for(i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
+    for(vector<int>::iterator i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
         if(!visited[*i]) fillOrder(*i);
     }
  
     // All vertices reachable from v are processed by now, push v
-    Stack.push(v);
+    Stack.push(node);
 }
