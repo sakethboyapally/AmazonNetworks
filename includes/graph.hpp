@@ -7,13 +7,14 @@
 #include <sstream>
 #include <algorithm>
 #include <stack>
+#include "../includes/utils.hpp"
 
 using namespace std;
 
 class Graph {
 public:
 
-    Graph(string& filename);
+    Graph(string filename);
 
     void DFS(int node);
     void fillOrder(int node);
@@ -23,10 +24,9 @@ public:
     int Djistrka();
 
     void addEdge(int node, int edge);
-    pair<int, int> splitLine(string& line);
+    
 
-    string trimLeft(const string &str);
-    string trimRight(const string &str);
+    vector<vector<int>> getTranspose();
     vector<vector<int>>& getAdjacent();
 
 private:
@@ -34,5 +34,6 @@ private:
     vector<vector<int>> adjacent;
     vector<bool> visited;
     stack<int> Stack;
-
+    
+    vector<int> order;
 };

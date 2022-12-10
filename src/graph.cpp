@@ -1,5 +1,4 @@
 #include "../includes/graph.hpp"
-#include "../includes/utils.hpp"
 
 void Graph::addEdge(int node, int edge) {
     if (node < 0) return;
@@ -29,8 +28,9 @@ void Graph::addEdge(int node, int edge) {
 
 
 
-Graph::Graph(string& filename) {
+Graph::Graph(string filename) {
     ifstream input(filename);
+    input.open(filename);
     string line = "";
     while (getline(input, line)) {
         if (line[0] == '#') continue;
@@ -47,11 +47,21 @@ Graph::Graph(string& filename) {
 
 void Graph::DFS(int node) {
    visited[node] = true;
-   // cout << node << " ";
- 
+   for (size_t i = 0; i < adjacent.size(); i++) {
+    if (adjacent[node][i] == 1 && !visited[i]) {
+        DFS(i);
+    }
+   }
+   order.push_back(node);
+}
+
+void Graph::DFS(int node) {
+    visited[node] = true;
+    cout << node << " ";
+
     
-    for (vector<int>::iterator i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
-        if (!visited[*i]) DFS(*i);
+    for(vector<int>::iterator i = adjacent[node].begin(); i != adjacent[node].end(); ++i) {
+        if(!visited[*i]) DFS(*i);
     }
 }
 
@@ -72,4 +82,47 @@ void Graph::fillOrder(int node ) {
 vector<vector<int>>& Graph::getAdjacent() {
     return adjacent;
 }
+
+void Graph::Kosarajus() {
+    
+    for (int i = 0; i < size; i++) {
+        if (!visited[i]) {
+            fillOrder(i);
+        }
+    }
+
+   
+    Graph gr = getTranspose();
+ 
+    
+    for(int i = 0; i < size; i++) {
+        visited[i] = false;
+    }
+ 
+    
+    while (!Stack.empty()) {
+        
+        int v = Stack.top();
+        Stack.pop();
+ 
+        
+        if (visited[v] == false) {
+            gr.DFS(v);
+        }
+    }
+}
+
+vector<vector<int>> Graph::getTranspose() {
+    vector<vector<int>> transpose(size, vector<int>(size, 0));
+    for (size_t i = 0; i < adjacent.size(); i++) {
+        for (size_t j = 0; j < adjacent[i].size(); j++) {
+            transpose[j][i] = adjacent[i][j];
+        }
+    }
+    return transpose;
+}
+
+
+
+
 
