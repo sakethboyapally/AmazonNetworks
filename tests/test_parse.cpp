@@ -1,7 +1,7 @@
 #include "catch2/catch_test_macros.hpp"
 
 #include "../includes/graph.hpp"
-// #include "../tests/test_file.txt"
+
 #include "../includes/utils.hpp"
 
 using namespace std;
@@ -27,7 +27,7 @@ TEST_CASE("Parse Test Split Line 2") {
 }
 
 TEST_CASE("Constructor Adjacency Matrix 1") {
-    string file = "test_file.txt";
+    string file = "../test_file.txt";
     Graph g(file);
 
     vector<vector<int>> expected = {

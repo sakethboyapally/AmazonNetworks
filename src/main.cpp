@@ -2,7 +2,7 @@
 #include "../includes/graph.hpp"
 #include "../includes/utils.hpp"
 int main() {
-    string file = "test_file.txt";
+    string file = "../test_file.txt";
     Graph g(file);
 
     vector<vector<int>> expected = {
