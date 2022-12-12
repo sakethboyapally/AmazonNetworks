@@ -59,7 +59,25 @@ void Graph::DFS(int node) {
 }
 
 
-
+void Graph::Kosarajus() {
+    DFS(0);
+    for (size_t i = 0; i < visited.size(); i++) {
+        if (!visited[i]) {
+            cout << "Not a strongly connected graph" << endl;
+            return;
+        }
+    }
+    vector<vector<int>> transpose = getTranspose();
+    visited = vector<bool>(size, false);
+    DFS(0);
+    for (size_t i = 0; i < visited.size(); i++) {
+        if (!visited[i]) {
+            cout << "Not a strongly connected graph" << endl;
+            return;
+        }
+    }
+    cout << "Strongly connected graph" << endl;
+}
 
 
 

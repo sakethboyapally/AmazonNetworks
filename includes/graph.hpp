@@ -17,9 +17,8 @@ public:
     Graph(string filename);
 
     void DFS(int node);
-    void fillOrder(int node);
 
-    int Kosarajus();
+    void Kosarajus();
     
     int Djistrka();
 

@@ -13,7 +13,11 @@ int main() {
     };
     if (expected == g.getAdjacent()) {
         std::cout << "SUCCESS" <<std::endl;
+    } else {
+        std::cout << "FAIL" << std::endl;
     }
-    std::cout << "FAIL" << std::endl;
+
+    g.DFS(0);
+    
     
 }
