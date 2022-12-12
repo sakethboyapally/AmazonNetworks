@@ -27,13 +27,13 @@ The order of which the nodes are visited is written to standard output.
 ###
 Call Djisktras using the desired starting int node and desired ending int node to find the shortest path.
 ###
-vector<int> path = g.Djisktras(0, 5);
+vector<int> path = g.Djisktras(0, 5); \
 
+The resulting vector is the path of nodes taken to travel from node 0 to node 5. This can be looped through and printed to standard output to view the contents of the vector.\
+Call Kosarajus Algorithm to see if the graph is strongly or weakly connected.\
+g.Kosarajus();\
+  
 
+A statement "This is a strongly connected graph" or "This is a weakly connected graph" is written to standard output.\
   
-The resulting vector is the path of nodes taken to travel from node 0 to node 5. This can be looped through and printed to standard output to view the contents of the vector.
-Call Kosarajus Algorithm to see if the graph is strongly or weakly connected.
-g.Kosarajus();
-A statement "This is a strongly connected graph" or "This is a weakly connected graph" is written to standard output.
-  
-The test cases we wrote test the data parsing, the creation of an adjacency list from the raw Amazon data, as well as the output of our two algorithms, Djikstra's and Kosaraju's, when ran on the aforementioned adjacency list. 
+The test cases we wrote test the data parsing, the creation of an adjacency list from the raw Amazon data, as well as the output of our two algorithms, Djikstra's and Kosaraju's, when ran on the aforementioned adjacency list.\
