@@ -32,6 +32,7 @@ private:
     size_t size;
     vector<vector<int>> adjacent;
     vector<bool> visited;
+    int nodes;
     stack<int> Stack;
     
     vector<int> order;

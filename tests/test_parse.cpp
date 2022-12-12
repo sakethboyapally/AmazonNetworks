@@ -33,10 +33,20 @@ TEST_CASE("Constructor Adjacency Matrix 1") {
     vector<vector<int>> expected = {
         {4, 5},
         {0, 2, 4, 5},
-        {0, 11, 13},
-        {63, 64},
+        {0, 11, 13}
     };
 
 
     REQUIRE(expected == g.getAdjacent());
+}
+
+TEST_CASE("Simple DFS Test 1") {
+    vector<vector<int>> adjacencyList = {
+        {1, 2},
+        {5, 3},
+        {3},
+        {},
+        {},
+        {3}
+    };
 }
