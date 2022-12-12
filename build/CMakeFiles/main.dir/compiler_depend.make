@@ -245,11 +245,16 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
   ../includes/utils.hpp \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
   ../includes/utils.hpp
 
+
+/usr/include/c++/11/limits:
 
 /usr/include/c++/11/bits/stl_stack.h:
 
@@ -398,6 +403,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
@@ -674,6 +681,8 @@ CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/stringfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 

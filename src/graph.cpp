@@ -22,7 +22,7 @@ void Graph::addEdge(int node, int edge) {
 Graph::Graph(string filename) {
     int n = 0;
     ifstream input;
-    input.open(filename);
+    input.open(filename);  
     if (!input.is_open()) {
         cout << "File not found" << endl;
         return;
@@ -31,7 +31,7 @@ Graph::Graph(string filename) {
     while (getline(input, line)) {
         if (line[0] == '#' || onlySpaces(line)) continue;
         pair<int,int> pair = splitLine(line);
-        n = max({n, pair.first, pair.second});
+        n = max({n, pair.first, pair.second}); //get the max node
         addEdge(pair.first, pair.second);
     }
 
@@ -89,6 +89,7 @@ void Graph::Kosarajus() {
 
 
 vector<vector<int>>& Graph::getAdjacent() {
+    
     return adjacent;
 }
 
@@ -102,6 +103,41 @@ vector<vector<int>> Graph::getTranspose() {
     }
     return transpose;
 }
+
+
+vector<int> Graph::Djistrka(int start, int end) {
+    vector<int> dist(size, numeric_limits<int>::max());
+    vector<int> prev(size, -1);
+    dist[start] = 0;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push(make_pair(0, start));
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+        for (size_t i = 0; i < adjacent[u].size(); i++) {
+            int v = adjacent[u][i];
+            int weight = 1;
+            if (dist[v] > dist[u] + weight) {
+                dist[v] = dist[u] + weight;
+                prev[v] = u;
+                pq.push(make_pair(dist[v], v));
+            }
+        }
+    }
+    vector<int> path;
+    for (int i = end; i != -1; i = prev[i]) {
+        path.push_back(i);
+    }
+    reverse(path.begin(), path.end());
+    return path;
+}
+
+
+
+
+
+
+
 
 
 

@@ -245,6 +245,9 @@ src/CMakeFiles/src.dir/graph.cpp.o: ../src/graph.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
   ../includes/utils.hpp \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h
@@ -493,6 +496,9 @@ src/CMakeFiles/src.dir/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
   ../includes/utils.hpp \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
@@ -712,6 +718,8 @@ src/CMakeFiles/src.dir/utils.cpp.o: ../src/utils.cpp \
 
 ../src/main.cpp:
 
+/usr/include/c++/11/limits:
+
 /usr/include/c++/11/bits/stl_stack.h:
 
 /usr/include/c++/11/bits/stl_deque.h:
@@ -859,6 +867,8 @@ src/CMakeFiles/src.dir/utils.cpp.o: ../src/utils.cpp \
 /usr/include/c++/11/bits/stl_vector.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
@@ -1127,6 +1137,8 @@ src/CMakeFiles/src.dir/utils.cpp.o: ../src/utils.cpp \
 /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 

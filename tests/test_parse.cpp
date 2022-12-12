@@ -17,7 +17,7 @@ TEST_CASE("Parse Test Split Line") {
 }
 
 TEST_CASE("Parse Test Split Line 2") {
-    string line = "  2769   20   ";
+    string line = "2769 20";
     pair<int, int> user = splitLine(line);
     pair<int, int> ans;
     ans.first = 2769;
