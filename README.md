@@ -35,7 +35,10 @@ The resulting vector is the path of nodes taken to travel from node 0 to node 5.
   
 
 Call Kosarajus Algorithm to see if the graph is strongly or weakly connected.
-g.Kosarajus();\
+  
+  
+  
+g.Kosarajus();
   
 
 
