@@ -29,7 +29,7 @@ Graph::Graph(string filename) {
     }
     string line;
     while (getline(input, line)) {
-        
+        if (line[0] == '#' || onlySpaces(line)) continue;
         pair<int,int> pair = splitLine(line);
         n = max({n, pair.first, pair.second});
         addEdge(pair.first, pair.second);

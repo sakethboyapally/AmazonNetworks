@@ -22,3 +22,7 @@ std::string trimRight(const std::string &str) {
     std::string tmp = str;
     return tmp.erase(tmp.find_last_not_of(" ") + 1);
 }
+
+bool onlySpaces(const std::string& str) {
+   return str.find_first_not_of (' ') == str.npos;
+}

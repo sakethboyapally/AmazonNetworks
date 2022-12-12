@@ -8,3 +8,4 @@ std::pair<int, int> splitLine(std::string& line);
 
 std::string trimLeft(const std::string &str);
 std::string trimRight(const std::string &str);
+bool onlySpaces(const std::string& str);
