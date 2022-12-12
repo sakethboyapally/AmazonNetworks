@@ -37,23 +37,31 @@ Graph::Graph(string filename) {
     }
     string line;
     while (getline(input, line)) {
-        if (line[0] == '#') continue;
+        
         pair<int,int> pair = splitLine(line);
         
         addEdge(pair.first, pair.second);
     }
 
     this->size = adjacent.size();
-    vector<bool> temp(size, false);
-    this->visited = temp;
+    
+    this->visited.resize(size, false);
 }
 
 
 void Graph::DFS(int node) {
+    stack<int> stack;
+    stack.push(node);
     visited[node] = true;
-    for (size_t i = 0; i < adjacent[node].size(); i++) {
-        if (!visited[adjacent[node][i]]) {
-            DFS(adjacent[node][i]);
+    while (!stack.empty()) {
+        int current = stack.top();
+        cout << current << endl;
+        stack.pop();
+        for (size_t i = 0; i < adjacent[current].size(); i++) {
+            if (!visited[adjacent[current][i]]) {
+                stack.push(adjacent[current][i]);
+                visited[adjacent[current][i]] = true;
+            }
         }
     }
 }
