@@ -9,14 +9,28 @@ First, the user must open the directory in the cs225 docker container. The docke
 
 In order to run the test cases we have written, we use the same general process as MP testing in CS 225. In your project directory using the terminal, input as follows.  1.)mkdir build 2.)cd build  3.)cmake .. 3.)make test 4.) ./test Steps 1 and 3 only need  to be completed the first time that the code is opened on a new machine . 
 
+
+
+###
+
 We can also do make and ./main to see the output from main. In the main file, for the DFS function you initialize a graph using the filename of your desired file as the parameter to the graph constructor, and then you can call the DFS on it.
+###
 For example:
+###
 Graph g("../test_file.txt");
+###
 Call DFS using the desired starting int node of the traversal
-g.DFS(0); 
+###
+g.DFS(0);
+###
 The order of which the nodes are visited is written to standard output.
+###
 Call Djisktras using the desired starting int node and desired ending int node to find the shortest path.
+###
 vector<int> path = g.Djisktras(0, 5);
+
+
+  
 The resulting vector is the path of nodes taken to travel from node 0 to node 5. This can be looped through and printed to standard output to view the contents of the vector.
 Call Kosarajus Algorithm to see if the graph is strongly or weakly connected.
 g.Kosarajus();
