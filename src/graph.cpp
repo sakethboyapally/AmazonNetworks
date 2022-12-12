@@ -104,6 +104,39 @@ vector<vector<int>> Graph::getTranspose() {
 }
 
 
+vector<int> Graph::Djistrka(int start, int end) {
+    vector<int> dist(size, numeric_limits<int>::max());
+    vector<int> prev(size, -1);
+    dist[start] = 0;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    pq.push(make_pair(0, start));
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        pq.pop();
+        for (size_t i = 0; i < adjacent[u].size(); i++) {
+            int v = adjacent[u][i];
+            int weight = 1;
+            if (dist[v] > dist[u] + weight) {
+                dist[v] = dist[u] + weight;
+                prev[v] = u;
+                pq.push(make_pair(dist[v], v));
+            }
+        }
+    }
+    vector<int> path;
+    for (int i = end; i != -1; i = prev[i]) {
+        path.push_back(i);
+    }
+    reverse(path.begin(), path.end());
+    return path;
+}
+
+
+
+
+
+
+
 
 
 

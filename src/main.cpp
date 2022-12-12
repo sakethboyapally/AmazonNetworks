@@ -19,8 +19,17 @@ int main() {
     } else {
         std::cout << "FAIL" << std::endl;
     }
+    // cout << "DFS Traversal Order of the Graph" << endl;
+    // g.DFS(0);
+    // cout << endl;
+    // cout << "Kosarajus Algorithm" << endl;
+    // g.Kosarajus();
 
-    g.DFS(0);
-    
+    vector<int> ans = g.Djistrka(0, 3);
+
+    for (int x : ans) {
+        cout << x << " ";
+    }
+    cout << endl;
     
 }

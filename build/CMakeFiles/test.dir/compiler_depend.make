@@ -292,9 +292,13 @@ CMakeFiles/test.dir/tests/test_parse.cpp.o: ../tests/test_parse.cpp \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/debug/deque \
   /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/bits/stl_queue.h \
   ../includes/utils.hpp \
   ../includes/utils.hpp
 
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/debug/deque:
 
@@ -635,6 +639,8 @@ CMakeFiles/test.dir/tests/test_parse.cpp.o: ../tests/test_parse.cpp \
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/c++/11/bits/stl_queue.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
