@@ -20,7 +20,7 @@ public:
     Graph(string filename);
 
     vector<int> DFS(int node);
-
+    vector<int> DFS2(int node, vector<vector<int>> transpose);
     bool Kosarajus();
     
     vector<int> Djistrka(int start, int end);
@@ -34,7 +34,7 @@ public:
 
 private:
     size_t size;
-    
+
     vector<vector<int>> adjacent;
 
     vector<bool> visited;
@@ -43,6 +43,7 @@ private:
 
     int nodes;
     
-    stack<int> stack;
+    stack<int> stack1;
+    stack<int> stack2;
     
 };

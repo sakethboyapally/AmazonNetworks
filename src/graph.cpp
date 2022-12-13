@@ -48,18 +48,20 @@ Graph::Graph(string filename) {
 vector<int> Graph::DFS(int node) {
     vector<int> ans;
     size_t s = adjacent.size();
-    stack.push(node);
+    stack1.push(node);
+    stack2.push(node);
     visited[node] = true;
-    while (!stack.empty()) {
-        int current = stack.top();
-        cout << current << endl;
+    while (!stack1.empty()) {
+        int current = stack1.top();
+        cout << current << " " << endl;
         ans.push_back(current);
-        stack.pop();
+        stack1.pop();
         if ((size_t)current >= s) continue;
         for (size_t i = 0; i < adjacent[current].size(); i++) {
             int curr = adjacent[current][i];
             if (!visited[curr]) { //not visited
-                stack.push(curr);
+                stack1.push(curr);
+                stack2.push(curr);
                 visited[curr] = true;
             }
         }
@@ -71,28 +73,66 @@ vector<int> Graph::DFS(int node) {
     return ans;
 }
 
+//DFS SECOND PASS ON THE TRANSPOSED GRAPH FOR KOSARAJUS
+vector<int> Graph::DFS2(int node, vector<vector<int>> transpose) {
+    vector<int> ans;
+    size_t s = transpose.size();
+    stack1.push(node);
+    stack2.push(node);
+    visited[node] = true;
+    while (!stack1.empty()) {
+        int current = stack1.top();
+        cout << current << endl;
+        ans.push_back(current);
+        stack1.pop();
+        stack2.pop();
+        if ((size_t)current >= s) continue;
+        for (size_t i = 0; i < transpose[current].size(); i++) {
+            int curr = transpose[current][i];
+            if (!visited[curr]) { //not visited
+                stack1.push(curr);
+                stack2.push(curr);
+                visited[curr] = true;
+            }
+        }
+    }
+    //resetting the visited vector for the next DFS
+    
+    this->visited.clear();
+    this->visited.resize(this->nodes + 1, false);
+    return ans;
+}
+
+
+
+
 
 bool Graph::Kosarajus() {
-    //run DFS on the graph first pass
-    DFS(0);
-    for (size_t i = 0; i < visited.size(); i++) {
-        if (!kvisited[i]) {
-            cout << "Not a strongly connected graph" << endl;
-            return false;
+    for (int i = 0; i < nodes; i++) {
+        if (!visited[i]) {
+            DFS(i);
         }
     }
-    //Doing a second pass on the transpose of the graph
-    vector<vector<int>> transpose = getTranspose();
-    this->adjacent = transpose;
-    DFS(0);
-    for (size_t i = 0; i < visited.size(); i++) {
-        if (!kvisited[i]) {
-            cout << "Not a strongly connected graph" << endl;
-            return false;
+
+    vector<vector<int>> transpose;
+    transpose.resize(nodes + 1);
+
+    for (int i = 0; i < nodes; i++) {
+        visited[i] = false;
+        for (auto it: adjacent[i]) {
+            transpose[it].push_back(i);
         }
     }
-    //If all nodes are visited, then it is a strongly connected graph
-    cout << "Strongly connected graph" << endl;
+
+    while (!stack2.empty()) {
+        int current = stack2.top();
+        stack2.pop();
+        if (!visited[current]) {
+            cout << "SCC: ";
+            DFS2(current, transpose);
+            cout << endl;
+        }
+    }
     return true;
 }
 

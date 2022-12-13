@@ -5,18 +5,18 @@ int main() {
     string file = "../data/test_file.txt";
     string file2 = "../data/Amazon0302.txt";
     string file3 = "../test_file2.txt";
-    Graph g(file2);
+    Graph g(file);
 
    
     cout << "DFS Traversal" << endl;
-    g.DFS(414);
+    g.DFS(0);
     cout << endl;
     cout << "Kosarajus Traversal" << endl;
     g.Kosarajus();
     cout << endl;
     cout << "Djistrka Traversal" << endl;
-    cout << "PATH from 0 to 414: ";
-    vector<int> vec = g.Djistrka(0, 414);
+    cout << "PATH from 0 to 5: ";
+    vector<int> vec = g.Djistrka(0, 5);
     for (size_t i = 0; i < vec.size(); i++) {
         if (i == vec.size() - 1) {
             cout << vec[i] << endl;

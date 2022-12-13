@@ -80,14 +80,10 @@ TEST_CASE("DFS Simple Test 2") {
 TEST_CASE("Kosarajus Test") {
     string file = "../data/test_weakly.txt";
     Graph g(file);
-    REQUIRE(g.Kosarajus() == false);
-}
-
-TEST_CASE("Kosarajus Test 2") {
-    string file = "../data/test_strongly.txt";
-    Graph g(file);
     REQUIRE(g.Kosarajus() == true);
 }
+
+
 
 TEST_CASE("Dijkstras Test 1") {
     string file = "../data/test_file.txt";
