@@ -29,7 +29,7 @@ public:
    
     
 
-    vector<vector<int>> getTranspose();
+    
     vector<vector<int>>& getAdjacent();
 
 private:

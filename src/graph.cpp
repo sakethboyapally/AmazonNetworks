@@ -185,17 +185,7 @@ vector<int> Graph::Djistrka(int start, int end) {
 }
 
 
-vector<vector<int>> Graph::getTranspose() {
-    //Reverses the edges and nodes of the graph creating a transpose
-    vector<vector<int>> transpose;
-    transpose.resize(size, vector<int>());
-    for (size_t i = 0; i < size; i++) {
-        for (auto it : adjacent[i]) {
-            transpose[it].push_back(i);
-        }
-    }
-    return transpose;
-}
+
 
 
 
