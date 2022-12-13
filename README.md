@@ -45,3 +45,9 @@ g.Kosarajus();
 A statement "This is a strongly connected graph" or "This is a weakly connected graph" is written to standard output.
   
 The test cases we wrote test the data parsing, the creation of an adjacency list from the raw Amazon data, as well as the output of our two algorithms, Djikstra's and Kosaraju's, when ran on the aforementioned adjacency list.
+
+  
+  
+  
+  Link to Final Presentation:
+ https://drive.google.com/file/d/17JoMB_W8_0k8JN3AFj5iDo4ucXaG8vB3/view?usp=sharing
