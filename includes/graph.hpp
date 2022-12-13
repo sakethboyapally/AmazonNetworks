@@ -9,6 +9,7 @@
 #include <stack>
 #include <limits>
 #include <queue>
+#include <istream>
 #include "../includes/utils.hpp"
 
 using namespace std;
@@ -18,13 +19,14 @@ public:
 
     Graph(string filename);
 
-    void DFS(int node);
+    vector<int> DFS(int node);
 
-    void Kosarajus();
+    bool Kosarajus();
     
     vector<int> Djistrka(int start, int end);
 
     void addEdge(int node, int edge);
+   
     
 
     vector<vector<int>> getTranspose();
@@ -32,10 +34,15 @@ public:
 
 private:
     size_t size;
-    vector<vector<int>> adjacent;
-    vector<bool> visited;
-    int nodes;
-    stack<int> Stack;
     
-    vector<int> order;
+    vector<vector<int>> adjacent;
+
+    vector<bool> visited;
+    
+    vector<bool> kvisited;
+
+    int nodes;
+    
+    stack<int> stack;
+    
 };

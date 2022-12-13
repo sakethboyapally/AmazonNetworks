@@ -23,32 +23,37 @@ Graph::Graph(string filename) {
     int n = 0;
     ifstream input;
     input.open(filename);  
+    //parsing the file
     if (!input.is_open()) {
         cout << "File not found" << endl;
         return;
     }
+    //going line by line and adding the edges
     string line;
     while (getline(input, line)) {
         if (line[0] == '#' || onlySpaces(line)) continue;
-        pair<int,int> pair = splitLine(line);
+        istringstream str(line);
+        pair<int,int> pair;
+        str >> pair.first >> pair.second;
         n = max({n, pair.first, pair.second}); //get the max node
         addEdge(pair.first, pair.second);
     }
-
+    //setting variables accordingly
     this->size = adjacent.size();
     this->visited.resize(n+1, false);
     this->nodes = n;
 }
 
 
-void Graph::DFS(int node) {
+vector<int> Graph::DFS(int node) {
+    vector<int> ans;
     size_t s = adjacent.size();
-    stack<int> stack;
     stack.push(node);
     visited[node] = true;
     while (!stack.empty()) {
         int current = stack.top();
         cout << current << endl;
+        ans.push_back(current);
         stack.pop();
         if ((size_t)current >= s) continue;
         for (size_t i = 0; i < adjacent[current].size(); i++) {
@@ -59,62 +64,67 @@ void Graph::DFS(int node) {
             }
         }
     }
-
+    //resetting the visited vector for the next DFS
+    kvisited = visited;
     this->visited.clear();
     this->visited.resize(this->nodes + 1, false);
+    return ans;
 }
 
 
-void Graph::Kosarajus() {
+bool Graph::Kosarajus() {
+    //run DFS on the graph first pass
     DFS(0);
     for (size_t i = 0; i < visited.size(); i++) {
-        if (!visited[i]) {
+        if (!kvisited[i]) {
             cout << "Not a strongly connected graph" << endl;
-            return;
+            return false;
         }
     }
+    //Doing a second pass on the transpose of the graph
     vector<vector<int>> transpose = getTranspose();
-    visited = vector<bool>(size, false);
+    this->adjacent = transpose;
     DFS(0);
     for (size_t i = 0; i < visited.size(); i++) {
-        if (!visited[i]) {
+        if (!kvisited[i]) {
             cout << "Not a strongly connected graph" << endl;
-            return;
+            return false;
         }
     }
+    //If all nodes are visited, then it is a strongly connected graph
     cout << "Strongly connected graph" << endl;
+    return true;
 }
+
+
+
+
 
 
 
 
 vector<vector<int>>& Graph::getAdjacent() {
-    
+    //getter for adjacency list
     return adjacent;
 }
 
 
-vector<vector<int>> Graph::getTranspose() {
-    vector<vector<int>> transpose(size, vector<int>(size, 0));
-    for (size_t i = 0; i < adjacent.size(); i++) {
-        for (size_t j = 0; j < adjacent[i].size(); j++) {
-            transpose[j][i] = adjacent[i][j];
-        }
-    }
-    return transpose;
-}
+
 
 
 vector<int> Graph::Djistrka(int start, int end) {
     vector<int> dist(size, numeric_limits<int>::max());
     vector<int> prev(size, -1);
+    vector<int> visit(size, false);
     dist[start] = 0;
+    //creating priority queue
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     pq.push(make_pair(0, start));
     while (!pq.empty()) {
         int u = pq.top().second;
         pq.pop();
         for (size_t i = 0; i < adjacent[u].size(); i++) {
+            //checking distances of the potential node paths
             int v = adjacent[u][i];
             int weight = 1;
             if (dist[v] > dist[u] + weight) {
@@ -124,14 +134,28 @@ vector<int> Graph::Djistrka(int start, int end) {
             }
         }
     }
+    //using previous vector to put the path into an answer vector
     vector<int> path;
     for (int i = end; i != -1; i = prev[i]) {
         path.push_back(i);
     }
+    //reversing it to get the correct direction
     reverse(path.begin(), path.end());
     return path;
 }
 
+
+vector<vector<int>> Graph::getTranspose() {
+    //Reverses the edges and nodes of the graph creating a transpose
+    vector<vector<int>> transpose;
+    transpose.resize(size, vector<int>());
+    for (size_t i = 0; i < size; i++) {
+        for (auto it : adjacent[i]) {
+            transpose[it].push_back(i);
+        }
+    }
+    return transpose;
+}
 
 
 

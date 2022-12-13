@@ -2,34 +2,27 @@
 #include "../includes/graph.hpp"
 #include "../includes/utils.hpp"
 int main() {
-    string file = "../test_file.txt";
+    string file = "../data/test_file.txt";
     string file2 = "../data/Amazon0302.txt";
-    Graph g(file);
+    string file3 = "../test_file2.txt";
+    Graph g(file2);
 
-    // vector<vector<int>> expected = {
-    //     {1, 2},
-    //     {3, 5},
-    //     {3},
-    //     {},
-    //     {},
-    //     {3}
-    // };
-    // vector<vector<int>> x = g.getAdjacent();
-    // if (expected == x) {
-    //     std::cout << "SUCCESS" <<std::endl;
-    // } else {
-    //     std::cout << "FAIL" << std::endl;
-    // }
+   
     cout << "DFS Traversal" << endl;
-    g.DFS(0);
+    g.DFS(414);
     cout << endl;
     cout << "Kosarajus Traversal" << endl;
     g.Kosarajus();
     cout << endl;
-    cout << "Djisrka Traversal" << endl;
-    vector<int> vec = g.Djistrka(0, 5);
+    cout << "Djistrka Traversal" << endl;
+    cout << "PATH from 0 to 414: ";
+    vector<int> vec = g.Djistrka(0, 414);
     for (size_t i = 0; i < vec.size(); i++) {
-        cout << vec[i] << " ";
+        if (i == vec.size() - 1) {
+            cout << vec[i] << endl;
+            break;
+        }
+        cout << vec[i] << "->" << " ";
     }
     cout << endl;
 

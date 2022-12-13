@@ -6,25 +6,7 @@
 
 using namespace std;
 
-TEST_CASE("Parse Test Split Line") {
-   string line = "2769                     18   ";
-    pair<int, int> user = splitLine(line);
-    pair<int, int> ans;
-    ans.first = 2769;
-    ans.second = 18;
 
-    REQUIRE(user == ans);
-}
-
-TEST_CASE("Parse Test Split Line 2") {
-    string line = "2769 20";
-    pair<int, int> user = splitLine(line);
-    pair<int, int> ans;
-    ans.first = 2769;
-    ans.second = 20;
-
-    REQUIRE(user == ans);
-}
 
 TEST_CASE("Constructor Adjacency Matrix 1") {
     string file = "../data/test_file_simple_1.txt";
@@ -78,5 +60,55 @@ TEST_CASE("Constructor Adjacency Matrix 3") {
 }
 
 TEST_CASE("DFS Simple Test 1") {
-    
+    string file = "../data/test_file_simple_1.txt";
+    Graph g(file);
+    vector<int> vec = g.DFS(0);
+    vector<int> expected = {0, 2, 3, 1, 5};
+    REQUIRE(vec == expected);
+}
+
+TEST_CASE("DFS Simple Test 2") {
+   string file = "../data/test_file_simple_2.txt";
+    Graph g(file);
+    vector<int> vec = g.DFS(0);
+    vector<int> expected = {0, 3, 1, 6, 5, 4, 2};
+    REQUIRE(vec == expected);
+}
+
+
+
+TEST_CASE("Kosarajus Test") {
+    string file = "../data/test_weakly.txt";
+    Graph g(file);
+    REQUIRE(g.Kosarajus() == false);
+}
+
+TEST_CASE("Kosarajus Test 2") {
+    string file = "../data/test_strongly.txt";
+    Graph g(file);
+    REQUIRE(g.Kosarajus() == true);
+}
+
+TEST_CASE("Dijkstras Test 1") {
+    string file = "../data/test_file.txt";
+    Graph g(file);
+    vector<int> path = g.Djistrka(0, 5);
+    vector<int> expected = {0, 1, 2, 3, 4, 5};
+    REQUIRE(path == expected);
+}
+
+TEST_CASE("Dijkstras Test 2") {
+    string file = "../data/test_file.txt";
+    Graph g(file);
+    vector<int> path = g.Djistrka(0, 3);
+    vector<int> expected = {0, 1, 2, 3};
+    REQUIRE(path == expected);
+}
+
+TEST_CASE("Dijkstras Test 3") {
+    string file = "../data/test_file_simple_1.txt";
+    Graph g(file);
+    vector<int> path = g.Djistrka(0, 5);
+    vector<int> expected = {0, 1, 5};
+    REQUIRE(path == expected);
 }
